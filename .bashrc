@@ -9,7 +9,7 @@ if [ -z "$PS1" ]; then
 fi
 
 ## for mac quiwamu
-#export PS1='\[\033[7m\]\W\[\033[0m\]$ '
+#export PS1='\[\033[7m\]\W\[\033[0m\]\$ '
 #export PATH=$PATH:~/bin
 #alias emacs='emacs -nw'
 #alias vi='mvim'

@@ -82,7 +82,7 @@ nmap <C-p> gT
 "\ | endif
 
 " プラグイン管理pathogen
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
 
 " netrwの設定
 let g:netrw_sort_by           = 'time'

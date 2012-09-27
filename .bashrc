@@ -8,18 +8,18 @@ if [ -z "$PS1" ]; then
    return
 fi
 
-# for mac quiwamu
-export PS1='\[\033[7m\]\W\[\033[0m\]$ '
-export PATH=$PATH:~/bin
-alias emacs='emacs -nw'
-alias vi='mvim'
-shopt -s checkwinsize # Make bash check its window size after a process completes
-#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
+## for mac quiwamu
+#export PS1='\[\033[7m\]\W\[\033[0m\]$ '
+#export PATH=$PATH:~/bin
+#alias emacs='emacs -nw'
+#alias vi='mvim'
+#shopt -s checkwinsize # Make bash check its window size after a process completes
+##alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
 
 # for linux quiwamu
-#alias ls='ls -Fh --color'
-#alias vi='vim'
+alias ls='ls -Fh --color'
+alias vi='vim'
 
 # quiwamu
 export HISTCONTROL=ignoreboth	# 同じコマンドの繰り返しや、スペースで始まるコマンドを履歴に残さない
@@ -29,4 +29,3 @@ alias grep='grep -i --color'
 alias ll='ls -la'
 alias du='du -sh'
 alias locate='locate -i'
-#basenameでlocateしたいときはblocate（自作）を使う

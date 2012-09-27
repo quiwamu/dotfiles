@@ -11,10 +11,9 @@ fi
 ## for mac quiwamu
 #export PS1='\[\033[7m\]\W\[\033[0m\]\$ '
 #export PATH=$PATH:~/bin
-#alias emacs='emacs -nw'
-#alias vi='mvim'
-#shopt -s checkwinsize # Make bash check its window size after a process completes
+#alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 ##alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias vi='mvim'
 #alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
 
 # for linux quiwamu

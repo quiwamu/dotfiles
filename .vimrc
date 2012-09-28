@@ -48,26 +48,33 @@ set encoding=utf-8
 set fileencodings=utf-8,utf-16LE,utf-16BE,cp932,iso-2022-jp,euc-jp
 
 " emacsキーバインド
-"imap <C-d> <C-o>x
-imap <C-a> <C-o>0
-imap <C-e> <C-o>$
-imap <C-k> <C-o>d$
-nmap <C-d> x
-nmap <C-a> 0
+imap <C-a> <Home>
+imap <C-e> <End>
+imap <C-h> <Backspace>
+imap <C-d> <Del>
+imap <C-k> <C-o>D
+nmap <C-a> ^
 nmap <C-e> $
-nmap <C-k> d$
-cmap <C-p> <up>
-cmap <C-n> <down>
+nmap <C-h> i<Backspace><Esc>
+nmap <C-d> x
+nmap <C-k> D
 cmap <C-a> <Home>
 cmap <C-e> <End>
+cmap <C-h> <Backspace>
+cmap <C-d> <Del>
+cmap <C-k> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
+cmap <C-p> <up>
+cmap <C-n> <down>
 cmap <C-f> <Right>
 cmap <C-b> <Left>
 
 " カスタムキーマップ
 nmap t :tabedit<space>
-imap <C-@> <ESC>	" <C-[>の打ち間違い用
-nmap <C-@> <ESC>	" <C-[>の打ち間違い用
-vmap <C-@> <ESC>	" <C-[>の打ち間違い用
+map <C-@> <Esc>
+imap <C-@> <ESC>
+nmap <C-@> <ESC>
+vmap <C-@> <ESC>
+cmap <C-@> <ESC>	" うまく機能しない？
 nmap <C-n> gt
 nmap <C-p> gT
 
@@ -124,16 +131,3 @@ function! s:GetHighlight(hi)
   let hl = substitute(hl, 'xxx', '', '')
   return hl
 endfunction
-
-" 行末改行対応<C-d>
-function! Superx()
-	if col('.') <= len(getline('.'))
-		normal! x
-	else
-		let pos = getpos('.')
-		execute 'join!'
-		call setpos('.', pos)
-	endif
-	return ''
-endfunction
-inoremap <C-d> <C-R>=Superx()<Cr>

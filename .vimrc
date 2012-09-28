@@ -67,6 +67,8 @@ cmap <C-p> <up>
 cmap <C-n> <down>
 cmap <C-f> <Right>
 cmap <C-b> <Left>
+vmap <C-a> <Home>
+vmap <C-e> <End>
 
 " カスタムキーマップ
 nmap t :tabedit<space>

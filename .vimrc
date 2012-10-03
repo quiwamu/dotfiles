@@ -90,8 +90,10 @@ nmap <C-p> gT
 "\ |   setlocal omnifunc=syntaxcomplete#Complete
 "\ | endif
 
-" プラグイン管理pathogen
-"call pathogen#runtime_append_all_bundles()
+if has('mac')
+	" プラグイン管理pathogen
+	call pathogen#runtime_append_all_bundles()
+endif
 
 " netrwの設定
 let g:netrw_sort_by           = 'time'

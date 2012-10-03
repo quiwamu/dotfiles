@@ -18,17 +18,17 @@ linux*)
 ;;
 esac
 
-RPROMPT='$(git_prompt_info)$(git_prompt_status)'
-ZSH_THEME_GIT_PROMPT_PREFIX="%S"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
-ZSH_THEME_GIT_PROMPT_DIRTY=""
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_ADDED="%F{cyan}✈%f"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%F{yellow}✭%f"
-ZSH_THEME_GIT_PROMPT_DELETED="%F{red}✗%f"
-ZSH_THEME_GIT_PROMPT_RENAMED="%F{blue}➦%f"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%F{magenta}✂%f"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{grey}✱%f"
+export RPROMPT='$(git_prompt_info)$(git_prompt_status)'
+export ZSH_THEME_GIT_PROMPT_PREFIX="%S"
+export ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
+export ZSH_THEME_GIT_PROMPT_DIRTY=""
+export ZSH_THEME_GIT_PROMPT_CLEAN=""
+export ZSH_THEME_GIT_PROMPT_ADDED="%F{cyan}✈%f"
+export ZSH_THEME_GIT_PROMPT_MODIFIED="%F{yellow}✭%f"
+export ZSH_THEME_GIT_PROMPT_DELETED="%F{red}✗%f"
+export ZSH_THEME_GIT_PROMPT_RENAMED="%F{blue}➦%f"
+export ZSH_THEME_GIT_PROMPT_UNMERGED="%F{magenta}✂%f"
+export ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{grey}✱%f"
 
 export EDITOR='vi'
 alias less='less -M'

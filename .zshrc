@@ -12,7 +12,7 @@ darwin*)
 	alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
 ;;
 linux*)
-	PROMPT='%n@%M%S%1~%s%(!.#.%%) '
+	PROMPT='%n@%m%S%1~%s%(!.#.%%) '
 	alias ls='ls -Fh --color'
 	alias vi='vim'
 ;;

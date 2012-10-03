@@ -23,6 +23,7 @@ case "$OSTYPE" in
 		alias ls='ls -Fh --color'
 		alias vi='vim'
 		;;
+esac
 export HISTCONTROL=ignoreboth	# 同じコマンドの繰り返しや、スペースで始まるコマンドを履歴に残さない
 export HISTSIZE=10000
 function share_history {

@@ -20,7 +20,9 @@ done
 
 # for oh-my-zsh
 if [ -d $HOME/.oh-my-zsh ]; then
-  echo "pull oh-my-zsh \n git pull git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
+  echo "pull oh-my-zsh" 
+  git pull git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
 else
-  echo "clone oh-my-zshNo directory! $HOME/.oh-my-zsh \n git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
+  echo "clone oh-my-zsh"
+  $HOME/.oh-my-zsh \n git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
 fi

@@ -18,7 +18,7 @@ linux*)
 ;;
 esac
 
-RPROMPT='$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
+RPROMPT='$(git_prompt_info)$(git_prompt_status)'
 ZSH_THEME_GIT_PROMPT_PREFIX="%S"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
 ZSH_THEME_GIT_PROMPT_DIRTY=""

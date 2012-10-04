@@ -1,5 +1,5 @@
 copy .vimrc .bashrc .inputrc .zshrc and install oh-my-zsh
 ---------------------------------
-0. yum install git zsh
+[ 0. yum (or apt-get) install git zsh ]
 1. git clone git://github.com/quiwamu/dotfiles ~/dotfiles
-2. dotfiles/setup.sh
+2. sh ~/dotfiles/setup.sh

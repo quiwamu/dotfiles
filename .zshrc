@@ -25,10 +25,7 @@ darwin*)
 	;;
 linux*)
 	PROMPT='%n@%m%S%1~%s%(!.#.%%) '
-	RPROMPT='$(git_prompt_info)$(git_prompt_status)'
-	if [ "$RPROMPT" = "" ];then
-		RPROMPT=" "
-	fi
+	RPROMPT=' $(git_prompt_info)$(git_prompt_status)'
 	ZSH_THEME_GIT_PROMPT_PREFIX="%S"
 	ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
 	ZSH_THEME_GIT_PROMPT_DIRTY=""

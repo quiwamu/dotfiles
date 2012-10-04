@@ -24,7 +24,7 @@ darwin*)
 	alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
 	;;
 linux*)
-	PROMPT='%n@%m%S%1~%s%(!.#.%%) '
+	PROMPT='%S%n%s%m%S%1~%s%(!.#.%%) '
 	RPROMPT=' $(git_prompt_info)$(git_prompt_status)'
 	ZSH_THEME_GIT_PROMPT_PREFIX="%S"
 	ZSH_THEME_GIT_PROMPT_SUFFIX="%s"

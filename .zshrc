@@ -22,7 +22,7 @@ darwin*)
 	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vi='mvim'
 	alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
-;;
+	;;
 linux*)
 	PROMPT='%n@%m%S%1~%s%(!.#.%%) '
 	RPROMPT='$(git_prompt_info)$(git_prompt_status)'
@@ -30,16 +30,16 @@ linux*)
 	ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
 	ZSH_THEME_GIT_PROMPT_DIRTY=""
 	ZSH_THEME_GIT_PROMPT_CLEAN=""
-	ZSH_THEME_GIT_PROMPT_ADDED="%F✈%f"
-	ZSH_THEME_GIT_PROMPT_MODIFIED="%F✭%f"
-	ZSH_THEME_GIT_PROMPT_DELETED="%F✗%f"
-	ZSH_THEME_GIT_PROMPT_RENAMED="%F➦%f"
-	ZSH_THEME_GIT_PROMPT_UNMERGED="%F✂%f"
-	ZSH_THEME_GIT_PROMPT_UNTRACKED="%F✱%f"
+	ZSH_THEME_GIT_PROMPT_ADDED="%{\033[036m%}+%{\033[0m%}"
+	ZSH_THEME_GIT_PROMPT_MODIFIED="%{\033[033m%}m%{\033[0m%}"
+	ZSH_THEME_GIT_PROMPT_DELETED="%{\033[031m%}x%{\033[0m%}"
+	ZSH_THEME_GIT_PROMPT_RENAMED="%{\033[034m%}r%{\033[0m%}"
+	ZSH_THEME_GIT_PROMPT_UNMERGED="%{\033[035m%}u%{\033[0m%}"
+	ZSH_THEME_GIT_PROMPT_UNTRACKED="%{\033[032m%}*%{\033[0m%}"	
 
 	alias ls='ls -Fh --color'
 	alias vi='vim'
-;;
+	;;
 esac
 
 export EDITOR='vi'

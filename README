@@ -1,8 +1,4 @@
-for linux
-.vimrc
-.bashrc
-.inputrc
-
-for mac OSX
-.vimrc_mac
-.bashrc_mac
+copy .vimrc .bashrc .inputrc .zshrc and install oh-my-zsh
+---------------------------------
+1. git clone git://github.com/quiwamu/dotfiles ~/dotfiles
+2. dotfiles/setup.sh

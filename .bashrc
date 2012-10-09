@@ -16,11 +16,11 @@ case "$OSTYPE" in
 		alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 		alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 		alias vi='mvim'
-		alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
+		alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
 		;;
 	linux*)
 		# for linux
-		alias ls='ls -Fh --color'
+		alias ls='ls -F --color'
 		alias vi='vim'
 		;;
 esac

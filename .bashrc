@@ -8,8 +8,8 @@ if [ -z "$PS1" ]; then
    return
 fi
 
-case "$OSTYPE" in
-	darwiin*)
+case $OSTYPE in
+	darwin*)
 		# for mac
 		export PS1='\[\033[7m\]\W\[\033[0m\]\$ '
 		export PATH=$PATH:~/bin

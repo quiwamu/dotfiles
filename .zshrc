@@ -21,7 +21,7 @@ darwin*)
 	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vi='mvim'
-	alias ls='ls -FhG'	# ディレクトリの中身を表示したくないときは-d
+	alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
 	;;
 linux*)
 	PROMPT='%S%n%s%m%S%1~%s%(!.#.%%) '
@@ -37,7 +37,7 @@ linux*)
 	ZSH_THEME_GIT_PROMPT_UNMERGED="%{\033[035m%}u%{\033[0m%}"
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%{\033[032m%}*%{\033[0m%}"	
 
-	alias ls='ls -Fh --color'
+	alias ls='ls -F --color'
 	alias vi='vim'
 	;;
 esac

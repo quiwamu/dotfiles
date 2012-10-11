@@ -22,6 +22,7 @@ case "$OSTYPE" in
 		# for linux
 		alias ls='ls -Fh --color'
 		alias vi='vim'
+		export PATH=/usr/local/bin:$PATH' # for Homebrew
 		;;
 esac
 export HISTCONTROL=ignoreboth	# 同じコマンドの繰り返しや、スペースで始まるコマンドを履歴に残さない

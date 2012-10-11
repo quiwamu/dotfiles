@@ -18,6 +18,7 @@ darwin*)
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{grey}✱%f"
 
 	export PATH=$PATH:~/bin
+	export PATH=/usr/local/bin:$PATH # for Homebrew
 	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vi='mvim'
@@ -37,7 +38,6 @@ linux*)
 	ZSH_THEME_GIT_PROMPT_UNMERGED="%{\033[035m%}u%{\033[0m%}"
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%{\033[032m%}*%{\033[0m%}"	
 
-	export PATH=/usr/local/bin:$PATH' # for Homebrew
 	alias ls='ls -F --color'
 	alias vi='vim'
 	;;

@@ -13,6 +13,7 @@ case $OSTYPE in
 		# for mac
 		export PS1='\[\033[7m\]\W\[\033[0m\]\$ '
 		export PATH=$PATH:~/bin
+		export PATH=/usr/local/bin:$PATH # for Homebrew
 		alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 		alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 		alias vi='mvim'
@@ -22,7 +23,6 @@ case $OSTYPE in
 		# for linux
 		alias ls='ls -F --color'
 		alias vi='vim'
-		export PATH=/usr/local/bin:$PATH' # for Homebrew
 		;;
 esac
 export HISTCONTROL=ignoreboth	# 同じコマンドの繰り返しや、スペースで始まるコマンドを履歴に残さない

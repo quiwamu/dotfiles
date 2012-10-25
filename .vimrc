@@ -18,7 +18,8 @@ set ruler	" 右下の行情報
 if has('mouse')
 	set mouse=a
 endif
-set formatoptions+=m	" 整形オプション，マルチバイト系を追加
+"set formatoptions+=m	" 整形オプション，マルチバイト系を追加
+set formatoptions=	" 自動改行とか一切しない
 set ambiwidth=double	" ■●とかを全角で
 set wrap	" 自動折り返し
 if exists('+autochdir') 

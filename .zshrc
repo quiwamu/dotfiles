@@ -43,7 +43,7 @@ linux*)
 	;;
 esac
 
-export EDITOR='vi'
+export EDITOR='vim'
 alias less='less -M'
 alias grep='grep -i --color'
 alias ll='ls -la'

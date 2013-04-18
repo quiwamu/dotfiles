@@ -44,7 +44,8 @@ linux*)
 esac
 
 export EDITOR='vim'
-alias less='less -rM'
+export LESSCHARSET='utf-8'
+alias less='less -M'
 alias grep='grep -i --color'
 alias ll='ls -la'
 alias du='du -sh'

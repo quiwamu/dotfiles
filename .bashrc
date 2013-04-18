@@ -35,7 +35,8 @@ history -r # .bash_historyから履歴を読み込み直す
 export PROMPT_COMMAND="share_history" # 一回ごとに上記関数を実行
 shopt -u histappend # .bash_history追記モードは不要なのでOFFに
 export EDITOR='vim'
-alias less='less -rM'
+export LESSCHARSET='utf-8'
+alias less='less -M'
 alias grep='grep -i --color'
 alias ll='ls -la'
 alias du='du -sh'

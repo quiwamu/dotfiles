@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOT_FILES=( .vimrc .bashrc .zshrc .inputrc )
+DOT_FILES=( .vimrc .bashrc .zshrc .inputrc .gitignore)
 
 for file in ${DOT_FILES[@]}
 do
@@ -23,10 +23,16 @@ done
 
 # for oh-my-zsh
 if [ -d $HOME/.oh-my-zsh ]; then
-	echo "pull oh-my-zsh" 
-	cd ~/.oh-my-zsh
-	git pull
+#	echo "pull oh-my-zsh" 
+#	cd ~/.oh-my-zsh
+#	git pull
+:
 else
 	echo "clone oh-my-zsh"
 	git clone git://github.com/quiwamu/oh-my-zsh.git ~/.oh-my-zsh
 fi
+
+# for dotfiles
+#echo "pull dotfiles"
+#cd ~/dotfiles
+#git pull

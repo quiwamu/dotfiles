@@ -50,3 +50,4 @@ alias grep='grep -i --color'
 alias ll='ls -la'
 alias du='du -sh'
 alias locate='locate -i'
+unsetopt correct_all

@@ -51,3 +51,6 @@ alias ll='ls -la'
 alias du='du -sh'
 alias locate='locate -i'
 unsetopt correct_all
+# zmv http://mollifier.hatenablog.com/entry/20101227/p1
+autoload -Uz zmv
+alias zmv='noglob zmv -W' 

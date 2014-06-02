@@ -17,8 +17,8 @@ darwin*)
 	ZSH_THEME_GIT_PROMPT_UNMERGED="%F{magenta}✂%f"
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{grey}✱%f"
 
-	export PATH=$PATH:~/bin
 	export PATH=/usr/local/bin:$PATH # for Homebrew
+	export PATH=~/bin:$PATH
 	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vi='mvim'

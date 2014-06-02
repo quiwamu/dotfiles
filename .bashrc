@@ -12,8 +12,8 @@ case $OSTYPE in
 	darwin*)
 		# for mac
 		export PS1='\[\033[7m\]\W\[\033[0m\]\$ '
-		export PATH=$PATH:~/bin
 		export PATH=/usr/local/bin:$PATH # for Homebrew
+		export PATH=~/bin:$PATH
 		alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 		alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 		alias vi='mvim'

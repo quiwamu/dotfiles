@@ -17,8 +17,8 @@ darwin*)
 	ZSH_THEME_GIT_PROMPT_UNMERGED="%F{magenta}✂%f"
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{grey}✱%f"
 
-	export PATH=$PATH:~/bin
 	export PATH=/usr/local/bin:$PATH # for Homebrew
+	export PATH=~/bin:$PATH
 	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vi='mvim'
@@ -44,8 +44,13 @@ linux*)
 esac
 
 export EDITOR='vim'
+export LESSCHARSET='utf-8'
 alias less='less -M'
 alias grep='grep -i --color'
 alias ll='ls -la'
 alias du='du -sh'
 alias locate='locate -i'
+unsetopt correct_all
+# zmv http://mollifier.hatenablog.com/entry/20101227/p1
+autoload -Uz zmv
+alias zmv='noglob zmv -W' 

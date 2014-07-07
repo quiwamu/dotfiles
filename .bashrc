@@ -12,8 +12,8 @@ case $OSTYPE in
 	darwin*)
 		# for mac
 		export PS1='\[\033[7m\]\W\[\033[0m\]\$ '
-		export PATH=$PATH:~/bin
 		export PATH=/usr/local/bin:$PATH # for Homebrew
+		export PATH=~/bin:$PATH
 		alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 		alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 		alias vi='mvim'
@@ -35,8 +35,11 @@ history -r # .bash_historyから履歴を読み込み直す
 export PROMPT_COMMAND="share_history" # 一回ごとに上記関数を実行
 shopt -u histappend # .bash_history追記モードは不要なのでOFFに
 export EDITOR='vim'
+export LESSCHARSET='utf-8'
 alias less='less -M'
 alias grep='grep -i --color'
 alias ll='ls -la'
 alias du='du -sh'
 alias locate='locate -i'
+alias mv='mv -i'
+alias cp='cp -i'

@@ -2,7 +2,7 @@ colorscheme solarized
 set background=light
 
 set guioptions-=T	"ツールバー非表示
-set transparency=5
+set transparency=0
 set guifont=Monaco:h23
 set guifontwide=ヒラギノ丸ゴ\ Pro\ W4:h24
 set antialias

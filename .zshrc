@@ -3,10 +3,8 @@ DISABLE_AUTO_UPDATE="true"
 #ZSH_THEME="random"
 source $ZSH/oh-my-zsh.sh
 
-case "$OSTYPE" in
-darwin*)
-	PROMPT='%S%1~%s%(!.#.%%) '
-	RPROMPT='$(git_prompt_info)$(git_prompt_status)'
+case "$ZSH_VERSION" in
+5*)
 	ZSH_THEME_GIT_PROMPT_PREFIX="%S"
 	ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
 	ZSH_THEME_GIT_PROMPT_DIRTY=""
@@ -17,18 +15,8 @@ darwin*)
 	ZSH_THEME_GIT_PROMPT_RENAMED="%F{blue}➦%f"
 	ZSH_THEME_GIT_PROMPT_UNMERGED="%F{magenta}✂%f"
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%F{grey}✱%f"
-
-	export PATH=/usr/local/bin:$PATH # for Homebrew
-	export PATH=~/bin:$PATH
-	export PATH=/usr/local/share/npm/bin:$PATH # for npm
-	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
-	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-	alias vi='mvim'
-	alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
 	;;
-linux*)
-	PROMPT='%S%n%s%m%S%1~%s%(!.#.%%) '
-	RPROMPT=' $(git_prompt_info)$(git_prompt_status)'
+*)
 	ZSH_THEME_GIT_PROMPT_PREFIX="%S"
 	ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
 	ZSH_THEME_GIT_PROMPT_DIRTY=""
@@ -39,12 +27,27 @@ linux*)
 	ZSH_THEME_GIT_PROMPT_RENAMED="%{\033[034m%}r%{\033[0m%}"
 	ZSH_THEME_GIT_PROMPT_UNMERGED="%{\033[035m%}u%{\033[0m%}"
 	ZSH_THEME_GIT_PROMPT_UNTRACKED="%{\033[032m%}*%{\033[0m%}"	
+	;;
+esac
 
+case "$OSTYPE" in
+darwin*)
+	PROMPT='%S%1~%s%(!.#.%%) ' # サーバ名省略
+	export PATH=/usr/local/bin:$PATH # for Homebrew
+	export PATH=~/bin:$PATH
+	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
+	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+	alias vi='mvim'
+	alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
+	;;
+linux*)
+	PROMPT='%S%n%s%m%S%1~%s%(!.#.%%) ' # サーバ名表示
 	alias ls='ls -F --color'
 	alias vi='vim'
 	;;
 esac
 
+RPROMPT='$(git_prompt_info)$(git_prompt_status)'
 export EDITOR='vim'
 export LESSCHARSET='utf-8'
 alias less='less -M'

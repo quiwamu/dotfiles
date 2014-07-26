@@ -20,6 +20,7 @@ darwin*)
 
 	export PATH=/usr/local/bin:$PATH # for Homebrew
 	export PATH=~/bin:$PATH
+	export PATH=/usr/local/share/npm/bin:$PATH # for npm
 	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
 	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vi='mvim'

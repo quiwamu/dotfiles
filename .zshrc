@@ -1,4 +1,5 @@
 ZSH=$HOME/.oh-my-zsh
+DISABLE_AUTO_UPDATE="Disable"
 #ZSH_THEME="random"
 source $ZSH/oh-my-zsh.sh
 

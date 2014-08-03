@@ -1,6 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 #ZSH_THEME="random"
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 case "$ZSH_VERSION" in

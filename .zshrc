@@ -48,7 +48,7 @@ linux*)
 	;;
 esac
 
-RPROMPT='$(git_prompt_info)$(git_prompt_status)'
+RPROMPT=' $(git_prompt_info)$(git_prompt_status)'
 export EDITOR='vim'
 export LESSCHARSET='utf-8'
 alias less='less -M'

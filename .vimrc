@@ -78,6 +78,8 @@ imap <C-@> <ESC>
 nmap <C-@> <ESC>
 vmap <C-@> <ESC>
 cmap <C-@> <ESC>	" うまく機能しない？
+map	<C-j> <ESC>
+map!	<C-j> <ESC>
 nmap <C-n> gt
 nmap <C-p> gT
 

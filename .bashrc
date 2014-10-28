@@ -21,6 +21,7 @@ case $OSTYPE in
 		;;
 	linux*)
 		# for linux
+		# PS1='\[\033[7m\]\u\[\033[0m\]\h\[\033[7m\]\W\[\033[0m\]\$ '
 		alias ls='ls -F --color'
 		alias vi='vim'
 		;;

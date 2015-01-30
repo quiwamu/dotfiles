@@ -113,34 +113,36 @@ set diffopt=filler,context:6,vertical
 " 挿入モード時、ステータスラインの色を変更
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
 
-if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
+if and(has('syntax'),has('redir'))
+	augroup InsertHook
+		autocmd!
+		autocmd InsertEnter * call s:StatusLine('Enter')
+		autocmd InsertLeave * call s:StatusLine('Leave')
+	augroup END
+
+	let s:slhlcmd = ''
+	function! s:StatusLine(mode)
+	  if a:mode == 'Enter'
+		silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+		silent exec g:hi_insert
+	  else
+		highlight clear StatusLine
+		silent exec s:slhlcmd
+	  endif
+	endfunction
+
+	function! s:GetHighlight(hi)
+	  redir => hl
+	  exec 'highlight '.a:hi
+	  redir END
+	  let hl = substitute(hl, '[\r\n]', '', 'g')
+	  let hl = substitute(hl, 'xxx', '', '')
+	  return hl
+	endfunction
 endif
 
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-  endif
-endfunction
-
-function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
-endfunction
-
 " configファイルなどでコメント行を折りたためる
-"set foldmethod=expr これを指定しておくとデフォで畳まれちゃうのでコメントアウト
-set foldexpr=getline(v:lnum)=~'^\\s*[#;]'?1:getline(prevnonblank(v:lnum))=~'^\\s*[#;]'?1:getline(nextnonblank(v:lnum))=~'^\\s*[#;]'?1:0
+	"set foldmethod=expr これを指定しておくとデフォで畳まれちゃうのでコメントアウト
+if exists('+foldmethod')
+	set foldexpr=getline(v:lnum)=~'^\\s*[#;]'?1:getline(prevnonblank(v:lnum))=~'^\\s*#'?1:getline(nextnonblank(v:lnum))=~'^\\s*#'?1:0
+endif

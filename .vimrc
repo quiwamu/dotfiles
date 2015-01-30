@@ -96,6 +96,8 @@ nmap <C-p> gT
 if has('mac')
 	" プラグイン管理pathogen
 	call pathogen#runtime_append_all_bundles()
+	" <C-g>でChromeで開く
+	noremap <C-g> :!open -a "Google Chrome" %<CR>
 endif
 
 " netrwの設定
@@ -105,8 +107,8 @@ let g:netrw_sort_direction    = 'r'
 " diffsplitの設定
 set diffopt=filler,context:6,vertical
 
-" mp-image(vim6)用
-"inoremap ^? 	"^?の部分はmp-imagteで<C-v><bs>
+" vim6用
+"inoremap ^? 	"^?の部分は<C-v><bs>
 
 " 挿入モード時、ステータスラインの色を変更
 let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'

@@ -7,6 +7,7 @@ set history=50
 set nobackup
 
 " 全般
+set noundofile	"un~ファイルをつくらない
 set bs=indent,eol,start		" バックスペースの挙動
 set whichwrap=b,s,h,l,<,>,[,]	" 行頭＜＞行末間の移動
 set visualbell

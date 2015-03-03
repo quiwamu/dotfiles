@@ -7,7 +7,6 @@ set history=50
 set nobackup
 
 " 全般
-set noundofile	"un~ファイルをつくらない
 set bs=indent,eol,start		" バックスペースの挙動
 set whichwrap=b,s,h,l,<,>,[,]	" 行頭＜＞行末間の移動
 set visualbell
@@ -18,6 +17,9 @@ set laststatus=2	" 常にステータスライン表示
 set ruler	" 右下の行情報
 if has('mouse')
 	set mouse=a
+endif
+if has('undofile')
+	set noundofile	"un~ファイルをつくらない
 endif
 "set formatoptions+=m	" 整形オプション，マルチバイト系を追加
 set formatoptions=	" 自動改行とか一切しない

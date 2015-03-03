@@ -48,6 +48,7 @@ linux*)
 	;;
 esac
 
+unsetopt promptcr
 RPROMPT=' $(git_prompt_info)$(git_prompt_status)'
 export EDITOR='vim'
 export LESSCHARSET='utf-8'

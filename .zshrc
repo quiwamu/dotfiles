@@ -40,6 +40,8 @@ darwin*)
 	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 	alias vi='mvim'
 	alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
+	# for pycaffe
+	export PYTHONPATH=/Users/quiwamu/AI/caffe/python:$PYTHONPATH
 	;;
 linux*)
 	PROMPT='%S%n%s%m%S%1~%s%(!.#.%%) ' # サーバ名表示

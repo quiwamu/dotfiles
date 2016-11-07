@@ -6,8 +6,8 @@ source $ZSH/oh-my-zsh.sh
 
 case "$ZSH_VERSION" in
 5*)
-	ZSH_THEME_GIT_PROMPT_PREFIX="%S"
-	ZSH_THEME_GIT_PROMPT_SUFFIX="%s"
+	ZSH_THEME_GIT_PROMPT_PREFIX="%S%{$fg_bold[green]%}%{$bg[blue]%}"
+	ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_colors%}%s"
 	ZSH_THEME_GIT_PROMPT_DIRTY=""
 	ZSH_THEME_GIT_PROMPT_CLEAN=""
 	ZSH_THEME_GIT_PROMPT_ADDED="%F{cyan}✈%f"
@@ -33,7 +33,7 @@ esac
 
 case "$OSTYPE" in
 darwin*)
-	PROMPT='%S%1~%s%(!.#.%%) ' # サーバ名省略
+	PROMPT='%S%{$fg_bold[green]%}%{$bg[blue]%}%1~%{$reset_color%}%s%{$fg_bold[green]%}%(!.#.%%)%{$reset_color%} ' # サーバ名省略
 	export PATH=/usr/local/bin:$PATH # for Homebrew
 	export PATH=~/bin:$PATH
 	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
@@ -44,7 +44,7 @@ darwin*)
 	export PYTHONPATH=/Users/quiwamu/AI/caffe/python:$PYTHONPATH
 	;;
 linux*)
-	PROMPT='%S%n%s%m%S%1~%s%(!.#.%%) ' # サーバ名表示
+	PROMPT='%S%{$fg_bold[green]%}%{$bg[blue]%}%n%{$reset_color%}%s%{$fg_bold[green]%}%m%{$reset_color%}%S%{$fg_bold[green]%}%{$bg[blue]%}%1~%{$reset_color%}%s%{$fg_bold[green]%}%(!.#.%%)%{$reset_color%} ' # サーバ名表示
 	alias ls='ls -F --color'
 	alias vi='vim'
 	;;

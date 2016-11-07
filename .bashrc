@@ -11,7 +11,7 @@ fi
 case $OSTYPE in
 	darwin*)
 		# for mac
-		export PS1='\[\033[7m\]\W\[\033[0m\]\$ '
+		export PS1='\[\e[1;7;32;44m\]\W\[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] '
 		export PATH=/usr/local/bin:$PATH # for Homebrew
 		export PATH=~/bin:$PATH
 		alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
@@ -21,7 +21,7 @@ case $OSTYPE in
 		;;
 	linux*)
 		# for linux
-		# PS1='\[\033[7m\]\u\[\033[0m\]\h\[\033[7m\]\W\[\033[0m\]\$ '
+PS1='\[\e[1;7;32;44m\]\u\[\e[0m\]\[\e[1;32m\]\h\[\e[0m\]\[\e[1;7;32;44m\]\W\[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] '
 		alias ls='ls -F --color'
 		alias vi='vim'
 		;;

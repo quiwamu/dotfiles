@@ -2,7 +2,7 @@
 
 if [ -d $HOME/dotfiles ] && [ ! -d $HOME/.dotfiles ]; then
 	mv $HOME/dotfiles $HOME/.dotfiles
-	REPO_DIR=".dotriles"
+	REPO_DIR=".dotfiles"
 elif [ -d $HOME/dotfiles ]; then
 	REPO_DIR="dotfiles"
 elif [ -d $HOME/.dotfiles ]; then

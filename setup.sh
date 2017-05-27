@@ -12,7 +12,7 @@ else
 	exit 1
 fi
 
-DOT_FILES=( .vimrc .bashrc .zshrc .inputrc .gitignore)
+DOT_FILES=( .vimrc .bashrc .zshrc .inputrc .gitignore .tmux.conf)
 
 for file in ${DOT_FILES[@]}
 do

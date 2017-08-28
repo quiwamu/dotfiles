@@ -33,6 +33,10 @@ if [ -d $HOME/.oh-my-zsh ]; then
 #	echo "pull oh-my-zsh" 
 #	cd ~/.oh-my-zsh
 #	git pull
+	# GREP_OPTIONSの設定でエラーがでるので削除
+	if [ -e $HOME/.oh-my-zsh/lib/grep.zsh ]; then
+		rm $HOME/.oh-my-zsh/lib/grep.zsh
+	fi
 :
 else
 	echo "clone oh-my-zsh"

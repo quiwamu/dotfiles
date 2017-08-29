@@ -47,3 +47,8 @@ unsetopt correct_all
 # zmv http://mollifier.hatenablog.com/entry/20101227/p1
 autoload -Uz zmv
 alias zmv='noglob zmv -W' 
+export PYENV_ROOT=$HOME/.pyenv
+if [ -d "${PYENV_ROOT}" ]; then
+	export PATH=${PYENV_ROOT}/bin:$PATH
+	eval "$(pyenv init -)"
+fi

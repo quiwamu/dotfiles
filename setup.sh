@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ -d $HOME/dotfiles ] && [ ! -d $HOME/.dotfiles ]; then
 	mv $HOME/dotfiles $HOME/.dotfiles

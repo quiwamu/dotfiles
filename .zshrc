@@ -20,9 +20,7 @@ darwin*)
 	PROMPT='%S%{$fg_bold[green]%}%{$bg[blue]%}%1~%{$reset_color%}%s%{$fg_bold[green]%}%(!.#.%%)%{$reset_color%} ' # サーバ名省略
 	export PATH=/usr/local/bin:$PATH # for Homebrew
 	export PATH=~/bin:$PATH
-	alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
-	#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-	alias vi='mvim'
+	alias vi='vim'
 	alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
 	# for pycaffe
 	export PYTHONPATH=/Users/quiwamu/AI/caffe/python:$PYTHONPATH

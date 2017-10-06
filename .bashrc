@@ -14,9 +14,7 @@ case $OSTYPE in
 		export PS1='\[\e[1;7;32;44m\]\W\[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] '
 		export PATH=/usr/local/bin:$PATH # for Homebrew
 		export PATH=~/bin:$PATH
-		alias mvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab "$@"'
-		alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-		alias vi='mvim'
+		alias vi='vim'
 		alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
 		;;
 	linux*)

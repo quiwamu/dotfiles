@@ -32,6 +32,12 @@ linux*)
 	alias ls='ls -F --color'
 	alias vi='vim'
 	;;
+freebsd*)
+	# for sakura
+	PROMPT='%S%{$fg_bold[green]%}%{$bg[blue]%}%n%{$reset_color%}%s%{$fg_bold[green]%}%m%{$reset_color%}%S%{$fg_bold[green]%}%{$bg[blue]%}%1~%{$reset_color%}%s%{$fg_bold[green]%}%(!.#.%%)%{$reset_color%} '
+	alias vi='vim'
+	alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
+	;;
 esac
 
 unsetopt promptcr

@@ -25,6 +25,12 @@ PS1='\[\e[1;7;32;44m\]\u\[\e[0m\]\[\e[1;32m\]\h\[\e[0m\]\[\e[1;7;32;44m\]\W\[\e[
 		alias ls='ls -F --color'
 		alias vi='vim'
 		;;
+	freebsd*)
+		# for sakura
+		export PS1='\[\e[1;7;32;44m\]\u\[\e[0m\]\[\e[1;32m\]\h\[\e[0m\]\[\e[1;7;32;44m\]\W\[\e[0m\]\[\e[1;32m\]\$\[\e[0m\] '
+		alias vi='vim'
+		alias ls='ls -FG'	# ディレクトリの中身を表示したくないときは-d
+		;;
 esac
 export HISTCONTROL=ignoreboth	# 同じコマンドの繰り返しや、スペースで始まるコマンドを履歴に残さない
 export HISTSIZE=10000

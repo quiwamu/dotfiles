@@ -151,3 +151,25 @@ endif
 if exists('+foldmethod')
 	set foldexpr=getline(v:lnum)=~'^\\s*[#;]'?1:getline(prevnonblank(v:lnum))=~'^\\s*#'?1:getline(nextnonblank(v:lnum))=~'^\\s*#'?1:0
 endif
+
+" JSON Format
+" Jq
+" 外部コマンドjqのインストールが必要
+" レンジ指定不可
+command! -nargs=? Jq call s:Jq(<f-args>)
+function! s:Jq(...)
+	if 0 == a:0
+		let l:arg = "."
+	else
+		let l:arg = a:1
+	endif
+	execute "%! jq \"" . l:arg . "\""
+endfunction
+
+" JsonFormat
+" サロゲート文字の変換でエラー発生
+command! -range=% JsonFormat :execute '<line1>,<line2>!python -m json.tool'
+\ | :execute '%!python -c "import re,sys;chr=__builtins__.__dict__.get(\"unichr\", chr);sys.stdout.write(re.sub(r\"\\\\u[0-9a-f]{4}\", lambda x: chr(int(\"0x\" + x.group(0)[2:], 16)), sys.stdin.read()))"'
+\ | :%s/ \+$//ge
+\ | :set ft=javascript
+\ | :1

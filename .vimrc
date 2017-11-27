@@ -173,3 +173,6 @@ command! -range=% JsonFormat :execute '<line1>,<line2>!python -m json.tool'
 \ | :%s/ \+$//ge
 \ | :set ft=javascript
 \ | :1
+
+" Wrap
+command! -nargs=? Wrap :execute '%s/.\{'.<f-args>.'}/&\r/g'

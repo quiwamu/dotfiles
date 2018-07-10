@@ -176,3 +176,7 @@ command! -range=% JsonFormat :execute '<line1>,<line2>!python -m json.tool'
 
 " Wrap
 command! -nargs=? Wrap :execute '%s/.\{'.<f-args>.'}/&\r/g'
+
+" set paste時の自動復帰
+autocmd InsertLeave * set nopaste
+>>>>>>> set pasteからの自動復帰

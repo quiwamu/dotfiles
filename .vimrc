@@ -163,7 +163,7 @@ function! s:Jq(...)
 	else
 		let l:arg = a:1
 	endif
-	execute "%! jq --tab \"" . l:arg . "\""
+	execute "%! jq \"" . l:arg . "\""
 endfunction
 
 " JsonFormat

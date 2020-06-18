@@ -106,6 +106,7 @@ endif
 " netrwの設定
 let g:netrw_sort_by           = 'time'
 let g:netrw_sort_direction    = 'r'
+let g:netrw_list_hide         = '\.un\~$'
 
 " diffsplitの設定
 set diffopt=filler,context:6,vertical

@@ -47,6 +47,7 @@ alias grep='grep -i --color'
 alias ll='ls -la'
 alias du='du -sh'
 alias locate='locate -i'
+alias crontab='crontab -i'
 unsetopt correct_all
 # zmv http://mollifier.hatenablog.com/entry/20101227/p1
 autoload -Uz zmv

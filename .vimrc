@@ -97,8 +97,6 @@ nmap <C-p> gT
 "\ | endif
 
 if has('mac')
-	" プラグイン管理pathogen
-	call pathogen#runtime_append_all_bundles()
 	" <C-g>でChromeで開く
 	noremap <C-g> :!open -a "Google Chrome" %<CR>
 endif

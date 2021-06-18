@@ -49,6 +49,7 @@ alias lh='ls -lat | head'
 alias du='du -sh'
 alias locate='locate -i'
 alias crontab='crontab -i'
+alias kakunin='wget -q -O - http://test.psss.co.jp/kakunin.php'
 unsetopt correct_all
 # zmv http://mollifier.hatenablog.com/entry/20101227/p1
 autoload -Uz zmv

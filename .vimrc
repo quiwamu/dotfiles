@@ -8,16 +8,13 @@ set nobackup
 
 " 全般
 set bs=indent,eol,start		" バックスペースの挙動
-set whichwrap=b,s,h,l,<,>,[,]	" 行頭＜＞行末間の移動
+set whichwrap=b,s,h,l,<,>,[,]	" 行をまたいだ移動
 set visualbell
 set wildmenu
 set showcmd
 set cmdheight=1
 set laststatus=2	" 常にステータスライン表示
 set ruler	" 右下の行情報
-if has('mouse')
-	set mouse=a
-endif
 if has('undofile')
 	set noundofile	"un~ファイルをつくらない
 endif
@@ -51,7 +48,7 @@ set termencoding=utf-8
 set encoding=utf-8
 set fileencodings=utf-8,utf-16LE,utf-16BE,cp932,iso-2022-jp,euc-jp
 
-" emacsキーバインド
+" readlineキーバインド
 imap <C-a> <Home>
 imap <C-e> <End>
 imap <C-h> <Backspace>
@@ -110,44 +107,8 @@ let g:netrw_hide = 1
 " diffsplitの設定
 set diffopt=filler,context:6,vertical
 
-" vim6用
-"inoremap ^? 	"^?の部分は<C-v><bs>
-
-" 挿入モード時、ステータスラインの色を変更
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-
-if has('syntax')
-	if has('redir')
-		augroup InsertHook
-			autocmd!
-			autocmd InsertEnter * call s:StatusLine('Enter')
-			autocmd InsertLeave * call s:StatusLine('Leave')
-		augroup END
-
-		let s:slhlcmd = ''
-		function! s:StatusLine(mode)
-		  if a:mode == 'Enter'
-			silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-			silent exec g:hi_insert
-		  else
-			highlight clear StatusLine
-			silent exec s:slhlcmd
-		  endif
-		endfunction
-
-		function! s:GetHighlight(hi)
-		  redir => hl
-		  exec 'highlight '.a:hi
-		  redir END
-		  let hl = substitute(hl, '[\r\n]', '', 'g')
-		  let hl = substitute(hl, 'xxx', '', '')
-		  return hl
-		endfunction
-	endif
-endif
-
 " configファイルなどでコメント行を折りたためる
-	"set foldmethod=expr これを指定しておくとデフォで畳まれちゃうのでコメントアウト
+"set foldmethod=expr これを指定しておくとデフォで畳まれちゃうのでコメントアウト
 if exists('+foldmethod')
 	set foldexpr=getline(v:lnum)=~'^\\s*[#;]'?1:getline(prevnonblank(v:lnum))=~'^\\s*#'?1:getline(nextnonblank(v:lnum))=~'^\\s*#'?1:0
 endif
@@ -179,3 +140,9 @@ command! -nargs=? Wrap :execute '%s/.\{'.<f-args>.'}/&\r/g'
 
 " set paste時の自動復帰
 autocmd InsertLeave * set nopaste
+
+" vim-plug
+call plug#begin()
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+call plug#end()

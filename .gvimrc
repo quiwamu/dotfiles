@@ -14,6 +14,9 @@ if has('multi_byte_ime')
   highlight CursorIM guifg=NONE guibg=Purple
 endif
 "↑使えてない？
+if has('mouse')
+        set mouse=a
+endif
 
 " カラースキームをランダムに変える color/以下においてないので使えない
 "function! s:gundam() 

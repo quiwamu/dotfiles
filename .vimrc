@@ -142,7 +142,7 @@ command! -nargs=? Wrap :execute '%s/.\{'.<f-args>.'}/&\r/g'
 autocmd InsertLeave * set nopaste
 
 " vim-plug
-call plug#begin()
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-call plug#end()
+"call plug#begin()
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'mattn/vim-lsp-settings'
+"call plug#end()

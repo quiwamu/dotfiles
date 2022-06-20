@@ -52,7 +52,7 @@ alias crontab='crontab -i'
 alias kakunin='wget -q -O - http://test.psss.co.jp/kakunin.php'
 alias ffmpeg="ffmpeg -hide_banner"
 alias ffprobe="ffprobe -hide_banner"
-
+alias ffprobe_json="ffprobe -hide_banner -show_format -print_format json"
 unsetopt correct_all
 # zmv http://mollifier.hatenablog.com/entry/20101227/p1
 autoload -Uz zmv

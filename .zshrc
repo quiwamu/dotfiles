@@ -6,8 +6,7 @@ source $ZSH/oh-my-zsh.sh
 
 	ZSH_THEME_GIT_PROMPT_PREFIX="%S%{$fg_bold[green]%}%{$bg[blue]%}"
 	ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%s"
-	ZSH_THEME_GIT_PROMPT_DIRTY=""
-	ZSH_THEME_GIT_PROMPT_CLEAN=""
+	ZSH_THEME_GIT_PROMPT_DIRTY="" ZSH_THEME_GIT_PROMPT_CLEAN=""
 	ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%}+%{$reset_color%}"
 	ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%}m%{$reset_color%}"
 	ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}x%{$reset_color%}"
@@ -59,6 +58,7 @@ autoload -Uz zmv
 alias zmv='noglob zmv -W' 
 export PYENV_ROOT=$HOME/.pyenv
 if [ -d "${PYENV_ROOT}" ]; then
+	export PATH=${PYENV_ROOT}/shims:$PATH
 	export PATH=${PYENV_ROOT}/bin:$PATH
 	eval "$(pyenv init -)"
 fi

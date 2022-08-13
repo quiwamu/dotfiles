@@ -49,8 +49,8 @@ set encoding=utf-8
 set fileencodings=utf-8,utf-16LE,utf-16BE,cp932,iso-2022-jp,euc-jp
 
 " readlineキーバインド
-imap <C-a> <Home>
-imap <C-e> <End>
+imap <C-a> <C-o>^
+imap <C-e> <C-o>$
 imap <C-h> <Backspace>
 imap <C-d> <Del>
 imap <C-k> <C-o>D

@@ -50,6 +50,10 @@ alias locate='locate -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias crontab='crontab -i'
+alias kakunin='wget -q -O - http://test.psss.co.jp/kakunin.php'
+alias ffmpeg="ffmpeg -hide_banner"
+alias ffprobe="ffprobe -hide_banner"
+alias ffprobe_json="ffprobe -hide_banner -show_format -print_format json"
 export PYENV_ROOT=$HOME/.pyenv
 if [ -d "${PYENV_ROOT}" ]; then
 	export PATH=${PYENV_ROOT}/shims:$PATH

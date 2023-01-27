@@ -146,3 +146,9 @@ autocmd InsertLeave * set nopaste
 "Plug 'prabirshrestha/vim-lsp'
 "Plug 'mattn/vim-lsp-settings'
 "call plug#end()
+
+if &term =~ "xterm" || &term =~ "screen" || &term =~ "vt100"
+    " Disable appkeypad
+	" テンキーパッドを使えるようにする
+    let &t_ks = "\e[?1h"
+endif

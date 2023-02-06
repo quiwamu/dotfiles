@@ -96,6 +96,7 @@ nmap <C-p> gT
 if has('mac')
 	" <C-g>でChromeで開く
 	noremap <C-g> :!open -a "Google Chrome" %<CR>
+	set clipboard=unnamed
 endif
 
 " netrwの設定

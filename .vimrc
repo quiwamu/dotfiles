@@ -111,7 +111,7 @@ set diffopt=filler,context:6,vertical
 " configファイルなどでコメント行を折りたためる
 "set foldmethod=expr これを指定しておくとデフォで畳まれちゃうのでコメントアウト
 if exists('+foldmethod')
-	set foldexpr=getline(v:lnum)=~'^\\s*[#;]'?1:getline(prevnonblank(v:lnum))=~'^\\s*#'?1:getline(nextnonblank(v:lnum))=~'^\\s*#'?1:0
+	set foldexpr=getline(v:lnum)=~'^\\s*[#;\"]'?1:getline(prevnonblank(v:lnum))=~'^\\s*#'?1:getline(nextnonblank(v:lnum))=~'^\\s*#'?1:0
 endif
 
 " JSON Format

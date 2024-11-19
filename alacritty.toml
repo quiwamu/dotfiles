@@ -31,7 +31,7 @@ ipc_socket = true  # Default: true
 WINIT_X11_SCALE_FACTOR = "1.0"
 TERM = "xterm-256color"
 #なぜかtmuxで日本語が表示されない
-LC_ALL = "ja_JP.UTF-8"
+LANG = "ja_JP.UTF-8"
 
 # ====================== WINDOW ======================
 [window]

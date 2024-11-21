@@ -64,3 +64,15 @@ if [ -d "${PYENV_ROOT}" ]; then
 	eval "$(pyenv init -)"
 fi
 export GREP_OPTIONS=
+export PATH="/usr/local/sbin:$PATH"
+
+#tmuxでステータスラインにリモートホスト名を表示する
+ssh() {
+    if [ -n "$TMUX" ]; then
+        tmux rename-window "$@";
+        command ssh "$@";
+        tmux set-window-option automatic-rename "on" > /dev/null;
+    else
+        command ssh "$@";
+    fi
+}

@@ -5,6 +5,8 @@ set viminfo='20,\"50	" 各50行までバッファ
 set history=50
 " set backup
 set nobackup
+" swpファイル出力先
+set directory=~/.vim/swp
 
 " 全般
 set bs=indent,eol,start		" バックスペースの挙動

@@ -43,6 +43,11 @@ else
 	git clone git@github.com:quiwamu/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
+# vimのswpファイル置き場
+if [ ! -d $HOME/.vim/swp ]; then
+	mkdir $HOME/.vim/swp
+fi
+
 # for dotfiles
 echo "pull dotfiles"
 cd $HOME/$REPO_DIR
